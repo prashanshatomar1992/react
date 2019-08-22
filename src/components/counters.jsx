@@ -11,7 +11,7 @@ class Counters extends Component {
         ]
     };
     render() {
-        console.log('props  ',this.props)
+        // console.log('props  ',this.props)
         return (
             <div>
                 {/* <Counter />
@@ -19,7 +19,11 @@ class Counters extends Component {
                 <Counter />
                 <Counter /> */}
                 {this.state.counters.map(counter=> 
-                <Counter key={counter.id} value={counter.value} selected={true} />)}
+                <Counter key={counter.id} value={counter.value} selected={true} id={counter.id}>
+                <h3>Counter # {counter.id}</h3>
+                </Counter>
+                )
+                }
             </div>
         )
     }

@@ -2,6 +2,9 @@ TOPICS TO BE COVERED
 ----------------------------------------
 Composing Componenets
 Pass Data
+passing Data user props
+passing children using props caled children
+
 Raise and Handle Events
 Multiple Conponent in Sync
 Fucntional Components
