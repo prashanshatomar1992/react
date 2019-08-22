@@ -5,7 +5,14 @@ Pass Data
 passing Data user props
 passing children using props caled children
 
+Debugging in reactjs - using React Developer Tools extension in chrome to debug the react app
 Raise and Handle Events
 Multiple Conponent in Sync
 Fucntional Components
 Lifecycle Hooks
+
+Props vs state
+-----------------------------------------
+State is local to the component we cannot access state of one component into another component.
+We cannot change the property of the componet, example this.props.value=1; =>this will give error.
+React not allor to change the property of the component, property are the pure inputs to the component.
