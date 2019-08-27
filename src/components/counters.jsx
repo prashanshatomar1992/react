@@ -4,7 +4,7 @@ import Counter from './counter';
 class Counters extends Component {
     state={
         counters : [
-            { id:1,value :0},
+            { id:1,value :4},
             { id:2,value :0},
             { id:3,value :0},
             { id:4,value :0}       
@@ -15,20 +15,35 @@ class Counters extends Component {
         const counters_ = this.state.counters.filter(c => c.id !==counterId);
         this.setState({counters:counters_})
     }
+    handleReset = () =>{
+        
+        const counters = this.state.counters.map(c=>{
+            c.value = 0;
+            return c;
+        });
+        this.setState({counters})
+        console.log(this.state.counters)
+    }
     render() {
         // console.log('props  ',this.props)
         return (
             <div>
+                <button
+                onClick={this.handleReset}                
+                className="btn btn-primary">Reset</button>
                 {/* <Counter />
                 <Counter />
                 <Counter />
                 <Counter /> */}
                 {this.state.counters.map(counter=> 
-                <Counter key={counter.id} 
-                value={counter.value} 
-                selected={true} 
-                id={counter.id} 
-                onDelete={this.handleDelete}>
+                <Counter 
+                key={counter.id} 
+                onDelete={this.handleDelete}
+                // value={counter.value} 
+                // selected={true} 
+                // id={counter.id}
+                counter={counter}                 
+                >
                 <h3>Counter # {counter.id}</h3>
                 </Counter>
                 )

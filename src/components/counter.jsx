@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Counter extends Component {
   state = {
-    count: this.props.value, //0,
+    count: this.props.counter.value,//this.props.value, //0,
     tags: ["tag1", "tag2", "tag3"]
   };
   styles = { fontSize: "15px", fontWeight: "bold" };
@@ -59,7 +59,7 @@ class Counter extends Component {
         {/* {this.renderTags()} */}
         <button
           // onClick={this.handleDelete}
-          onClick={() => this.props.onDelete(this.props.id)}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
