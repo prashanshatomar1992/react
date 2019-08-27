@@ -15,8 +15,14 @@ class Counters extends Component {
         const counters_ = this.state.counters.filter(c => c.id !==counterId);
         this.setState({counters:counters_})
     }
-    handleReset = () =>{
-        
+    /**
+     * this handleReset wioth not updatde the state on DOM because of local state
+     * To update the DOM we need to remove the local state and work directly with the props (ie properties)
+     * Remove the local state of child or called component
+     * Called component state is called once when the component instance is created
+     */
+    
+    handleReset = () =>{        
         const counters = this.state.counters.map(c=>{
             c.value = 0;
             return c;

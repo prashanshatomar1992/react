@@ -5,10 +5,15 @@ Pass Data
 passing Data user props
 passing children using props caled children
 Debugging in reactjs - using React Developer Tools extension in chrome to debug the react app
-Updateing the state
-Raise and Handle Events
-Multiple Conponent in Sync
-Fucntional Components
+Updating the state
+Raise and Handle Events 
+Object destructuring
+Contorlled component = Comtrolled component does not have the state, controlled component receives the data from the prop and raises events whenever data needs to be changed
+Removing the Local State 
+Refactoring
+
+Multiple Component in Sync
+Functional Components
 Lifecycle Hooks
 
 Props vs state

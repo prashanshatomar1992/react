@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 class Counter extends Component {
-  // state = {
-  //   count: this.props.counter.value,//this.props.value, //0,
-  //   tags: ["tag1", "tag2", "tag3"]
-  // };
+  state = {
+    count: this.props.counter.value,//this.props.value, //0,
+    tags: ["tag1", "tag2", "tag3"]
+  };
   styles = { fontSize: "15px", fontWeight: "bold" };
 
   renderTags() {
@@ -23,12 +23,12 @@ class Counter extends Component {
   };
 
   //function with parameters
-  // handleIncrement = product => {
-  //   console.log("event clicked", this.state.count);
-  //   console.log("product argument  ", product);
+  handleIncrement = product => {
+    console.log("event clicked", this.state.count);
+    console.log("product argument  ", product);
 
-  //   this.setState({ count: this.state.count + 1 });
-  // };
+    this.setState({ count: this.state.count + 1 });
+  };
   doHandleIncrement = () => {
     this.handleIncrement({ id: 1 });
   };
@@ -50,15 +50,12 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          // onClick={() => this.handleIncrement({ id: 2 })}
-          onClick={()=> this.props.onIncrement(this.props.counter)}
+          onClick={() => this.handleIncrement({ id: 2 })}
           className="btn btn-secondary btn-sm"
         >
           Increment3
         </button>
-        {/* {this.state.tags.length === 0 && "Please create a new tag"} */}
         {this.state.tags.length === 0 && "Please create a new tag"}
-
         {/* {this.renderTags()} */}
         <button
           // onClick={this.handleDelete}
@@ -72,14 +69,11 @@ class Counter extends Component {
   }
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    // classes += this.state.count === 0 ? "warning" : "primary";'
-    classes += this.props.counter.count === 0 ? "warning" : "primary";
-
+    classes += this.state.count === 0 ? "warning" : "primary";
     return classes;
   }
   formatCount() {
-    // const { count } = this.state;
-    const { count } = this.props.counter
+    const { count } = this.state;
     return count === 0 ? <h5>Zero</h5> : count;
   }
 }
