@@ -15,6 +15,20 @@ class Counters extends Component {
         const counters_ = this.state.counters.filter(c => c.id !==counterId);
         this.setState({counters:counters_})
     }
+    handleIncrement = (counterId) =>{
+        console.log("eventgg handler delete clicked  ",counterId);
+        const counters = this.state.counters.map(c=>{
+            if(c.id===counterId.id){
+                c.value = c.value+1;
+            }
+            return c;
+        });
+        this.setState({counters})
+        console.log(this.state.counters)
+    }
+    formatCount = (counter) =>{
+        return counter.value === 0 ? <h5>Zero</h5> : counter.value;
+      }
     /**
      * this handleReset wioth not updatde the state on DOM because of local state
      * To update the DOM we need to remove the local state and work directly with the props (ie properties)
@@ -45,12 +59,16 @@ class Counters extends Component {
                 <Counter 
                 key={counter.id} 
                 onDelete={this.handleDelete}
+                onIncrement={this.handleIncrement}
+
                 // value={counter.value} 
                 // selected={true} 
                 // id={counter.id}
                 counter={counter}                 
                 >
-                <h3>Counter # {counter.id}</h3>
+                <h3>Counter id # {counter.id}</h3>
+                <h3>Counter value # {counter.value}</h3>
+                <span>{this.formatCount}</span>
                 </Counter>
                 )
                 }

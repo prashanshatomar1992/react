@@ -5,22 +5,22 @@ class Counter extends Component {
   //   tags: ["tag1", "tag2", "tag3"]
   // };
   styles = { fontSize: "15px", fontWeight: "bold" };
-
-  renderTags() {
-    if (this.state.tags.length === 0) return <p>There are no tags!</p>;
-    return (
-      <ul>
-        {this.state.tags.map(tag => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
-    );
-  }
   //function without parameters
   handleIncrement1 = () => {
     console.log("event clicked", this.state.count);
     this.setState({ count: this.state.count + 1 });
   };
+  renderTags() {
+    if (this.props.tags.length === 0) return <p>There are no tags!</p>;
+    return (
+      <ul>
+        {this.props.tags.map(tag => (
+          <li key={tag}>{tag}</li>
+        ))}
+      </ul>
+    );
+  }
+ 
 
   //function with parameters
   // handleIncrement = product => {
@@ -57,7 +57,7 @@ class Counter extends Component {
           Increment3
         </button>
         {/* {this.state.tags.length === 0 && "Please create a new tag"} */}
-        {this.state.tags.length === 0 && "Please create a new tag"}
+        {/* {this.state.tags.length === 0 && "Please create a new tag"} */}
 
         {/* {this.renderTags()} */}
         <button
